@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="درس الإمامة لمرحلة ما بعد التكليف - منهج شيعي معتمد"/>
+  <title>📚 درس الإمامة | مرحلة ما بعد التكليف</title>
+  
+  <!-- خطوط جوجل العربية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@300;400;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- ملف الأنماط -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- أيقونات SVG مدمجة -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
+</head>
+<body>
+  <!-- شريط التقدم -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- رأس الصفحة -->
+  <header class="lesson-header">
+    <div class="header-content">
+      <span class="badge">مرحلة ما بعد التكليف</span>
+      <h1>الإمامة: حُجّة الله في أرضه</h1>
+      <p class="subtitle">تحضير درس متكامل وفق المنهج الشيعي المعتمد</p>
+      <div class="lesson-meta">
+        <span>⏱️ 25-30 دقيقة</span>
+        <span>📖 5 وحدات</span>
+        <span>🎯 مستوى: متوسط</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- قائمة التنقل الجانبية -->
+  <nav class="sidebar" id="sidebar">
+    <ul class="nav-list">
+      <li><a href="#unit1" class="nav-link active" data-unit="1">1️⃣ خلو الأرض من الحجة</a></li>
+      <li><a href="#unit2" class="nav-link" data-unit="2">2️⃣ الإمامة: اختيار إلهي</a></li>
+      <li><a href="#unit3" class="nav-link" data-unit="3">3️⃣ الأصول والفروع</a></li>
+      <li><a href="#unit4" class="nav-link" data-unit="4">4️⃣ الإمامة: لغةً واصطلاحاً</a></li>
+      <li><a href="#unit5" class="nav-link" data-unit="5">5️⃣ الاستناد العقلي</a></li>
+      <li><a href="#quiz" class="nav-link" data-unit="quiz">✅ اختبار الدرس</a></li>
+    </ul>
+  </nav>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="lesson-content" id="mainContent">
+    
+    <!-- الوحدة 1: خلو الأرض من الحجة -->
+    <section id="unit1" class="unit active">
+      <h2>🕌 الوحدة الأولى: خلو الأرض من الحجة</h2>
+      <p class="unit-intro">لا يمكن أن تخلو الأرض من حجة لله سبحانه وتعالى؛ لأن الحجة هو صمام الأمان الفكري والشرعي للأمة.</p>
+      
+      <!-- قصة موسى والسامري -->
+      <div class="story-card">
+        <div class="story-header" onclick="toggleStory(this)">
+          <span class="story-icon">📜</span>
+          <h3>قصة نبي الله موسى والسامري</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="story-body">
+          <p><strong>المضمون:</strong> عندما ذهب موسى (عليه السلام) لميقات ربه، استخلف هارون. استغل السامري الغياب وصنع عجلاً من ذهب.</p>
+          <div class="highlight-box">
+            <strong>💡 الشاهد العقدي:</strong> تُظهر القصة خطورة غياب الحجة؛ فبمجرد غياب موسى القصير، كادت الأمة أن تهلك لولا وجود هارون.
+          </div>
+        </div>
+      </div>
+
+      <!-- قصة الإمام الهادي -->
+      <div class="story-card">
+        <div class="story-header" onclick="toggleStory(this)">
+          <span class="story-icon">🌧️</span>
+          <h3>الإمام الهادي وعظم النبي</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="story-body">
+          <p><strong>الرواية:</strong> في زمن المتوكل، خرج الراهب للاستسقاء فأمطر. ثم كشف الإمام الهادي (ع) عن عظم نبي في يده، فتقشع السحاب.</p>
+          <blockquote class="hadith-box">
+            «هذا عظم نبي من الأنبياء، وما كُشِفَ عن عظم نبي تحت السماء إلّا هطلت بالمطر»
+            <cite>ـ الإمام علي الهادي (عليه السلام)</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- سؤال تأملي -->
+      <div class="reflection-box">
+        <h4>💭 سؤال تأملي</h4>
+        <p>كيف تحمي عقيدتك اليوم من "السامريين المعاصرين" الذين يستغلون غياب المرجعية؟</p>
+        <textarea id="reflection1" placeholder="اكتب إجابتك هنا..." rows="3"></textarea>
+        <button class="btn-save" onclick="saveReflection(1)">💾 حفظ الإجابة</button>
+        <span class="save-status" id="status1"></span>
+      </div>
+    </section>
+
+    <!-- الوحدة 2: هل الإمامة اختيار من الناس؟ -->
+    <section id="unit2" class="unit">
+      <h2>⚖️ الوحدة الثانية: الإمامة مقام إلهي</h2>
+      <p class="unit-intro">الإمامة عهد إلهي لا يخضع لأهواء البشر، بل هي تنصيب رباني مباشر.</p>
+
+      <!-- بطاقة الآية -->
+      <div class="evidence-card quran">
+        <div class="evidence-icon">📖</div>
+        <div class="evidence-content">
+          <p class="arabic-text">يَا أَيُّهَا الرَّسُولُ بَلِّغْ مَا أُنزِلَ إِلَيْكَ مِن رَّبِّكَ ۖ وَإِن لَّمْ تَفْعَلْ فَمَا بَلَّغْتَ رِسَالَتَهُ</p>
+          <p class="reference">[سورة المائدة: 67]</p>
+          <button class="btn-audio" onclick="playAudio('ayah67')">🔊 استمع للتلاوة</button>
+        </div>
+      </div>
+
+      <!-- بطاقة الحديث -->
+      <div class="evidence-card hadith">
+        <div class="evidence-icon">💬</div>
+        <div class="evidence-content">
+          <p class="hadith-text">«أَنْتَ مِنِّي بِمَنْزِلَةِ هَارُونَ مِنْ مُوسَى إِلَّا أَنَّهُ لَا نَبِيَّ بَعْدِي»</p>
+          <p class="reference">ـ حديث المنزلة (متواتر)</p>
+          <div class="explanation">
+            <strong>الشرح المصغّر:</strong> يثبت هذا الحديث للإمام علي (ع) كل منازل هارون: الخلافة، الوزارة، الولاية، وإدارة الأمة.
+          </div>
+        </div>
+      </div>
+
+      <!-- نشاط الترتيب -->
+      <div class="interactive-activity">
+        <h4>🧩 نشاط: رتب الأدلة على تنصيب الإمامة</h4>
+        <p>اسحب العناصر لترتيبها من الأقوى للأضعف:</p>
+        <div class="drag-container" id="dragContainer">
+          <div class="draggable" draggable="true" data-order="3">الرأي البشري</div>
+          <div class="draggable" draggable="true" data-order="2">الإجماع</div>
+          <div class="draggable" draggable="true" data-order="1">النص القرآني والنبوي</div>
+        </div>
+        <button class="btn-check" onclick="checkOrder()">✅ تحقق من الترتيب</button>
+        <p class="feedback" id="orderFeedback"></p>
+      </div>
+    </section>
+
+    <!-- الوحدة 3: الأصول والفروع -->
+    <section id="unit3" class="unit">
+      <h2>📋 الوحدة الثالثة: أصول الدين وفروعه</h2>
+      
+      <!-- جدول تفاعلي -->
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>وجه المقارنة</th>
+              <th>أصول الدين</th>
+              <th>فروع الدين</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>المفهوم</strong></td>
+              <td>عقائد وأصول عقلية</td>
+              <td>أحكام عملية وتكاليف</td>
+            </tr>
+            <tr>
+              <td><strong>التقليد</strong></td>
+              <td class="no-taqlid">❌ لا يجوز أبداً</td>
+              <td class="yes-taqlid">✅ يجب لغير المجتهد</td>
+            </tr>
+            <tr>
+              <td><strong>الأمثلة</strong></td>
+              <td>التوحيد، العدل، النبوة، الإمامة، المعاد</td>
+              <td>الصلاة، الصوم، الحج، الزكاة...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- سيناريو تطبيقي -->
+      <div class="scenario-box">
+        <h4>🎭 سيناريو تطبيقي</h4>
+        <p>طالب يريد معرفة حكم صلاة الاستسقاء قبل موعدها. ما هو التصرف الصحيح شرعاً؟</p>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="scenario" value="wrong">
+            <span>يبحث بنفسه في الكتب الفقهية المتشعبة</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="scenario" value="correct">
+            <span>يرجع إلى مرجعه الحي الأعلم لسؤاله</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="scenario" value="wrong">
+            <span>يقلد أي عالم دون بحث عن الأعلم</span>
+          </label>
+        </div>
+        <button class="btn-check" onclick="checkScenario()">✅ تحقق من الإجابة</button>
+        <p class="feedback" id="scenarioFeedback"></p>
+      </div>
+    </section>
+
+    <!-- الوحدة 4: الإمامة لغةً واصطلاحاً -->
+    <section id="unit4" class="unit">
+      <h2>🔍 الوحدة الرابعة: تعريف الإمامة</h2>
+      
+      <!-- مصطلحات تفاعلية -->
+      <div class="glossary-grid">
+        <div class="glossary-item" onclick="showDefinition('linguistic')">
+          <span class="term">الإمامة في اللغة</span>
+          <span class="hint">انقر للتعريف</span>
+        </div>
+        <div class="glossary-item" onclick="showDefinition('terminology')">
+          <span class="term">الإمامة في الاصطلاح</span>
+          <span class="hint">انقر للتعريف</span>
+        </div>
+        <div class="glossary-item" onclick="showDefinition('boundary')">
+          <span class="term">حدود الوحي والتشريع</span>
+          <span class="hint">انقر للتوضيح</span>
+        </div>
+      </div>
+
+      <!-- نافذة التعريف -->
+      <div class="modal" id="definitionModal">
+        <div class="modal-content">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <h4 id="modalTitle"></h4>
+          <p id="modalText"></p>
+        </div>
+      </div>
+
+      <!-- مربع التحذير -->
+      <div class="warning-box">
+        <span class="warning-icon">⚖️</span>
+        <div>
+          <strong>تنبيه مهم:</strong> الإمام لا يتلقى تشريعاً جديداً. الوحي التشريعي انقطع بوفاة النبي (ص)، لكن الإمام قد يُلهَم أو تُنزَّل عليه الملائكة لأغراض إخبارية أو تأييدية فقط.
+        </div>
+      </div>
+    </section>
+
+    <!-- الوحدة 5: الاستناد العقلي -->
+    <section id="unit5" class="unit">
+      <h2>🧠 الوحدة الخامسة: البرهان العقلي</h2>
+      
+      <!-- خريطة ذهنية تفاعلية -->
+      <div class="mindmap-container">
+        <div class="mindmap-root">أصول الدين</div>
+        <div class="mindmap-branch">
+          <div class="branch-node" onclick="expandNode('tawhid')">
+            <span>1. التوحيد</span>
+            <span class="expand-hint">+</span>
+          </div>
+          <div class="branch-sub" id="tawhid-sub">
+            <div class="sub-node">← يتفرع منه: العدل</div>
+            <p class="sub-explain">العقل يدرك أن الخالق واحد، ومن كماله أنه عادل لا يجبر ثم يحاسب.</p>
+          </div>
+        </div>
+        <div class="mindmap-branch">
+          <div class="branch-node" onclick="expandNode('nubuwwah')">
+            <span>2. النبوة</span>
+            <span class="expand-hint">+</span>
+          </div>
+          <div class="branch-sub" id="nubuwwah-sub">
+            <div class="sub-node">← يتفرع منها: الإمامة</div>
+            <p class="sub-explain">الشريعة خاتمة، فلا بد من حافظ معصوم يمنع تحريفها ويبيّن مجملها.</p>
+          </div>
+        </div>
+        <div class="mindmap-branch">
+          <div class="branch-node">3. المعاد</div>
+          <p class="sub-explain">يوم تُرد المظالم ويُجزى كلٌّ بعمله، تحقيقاً للعدل المطلق.</p>
+        </div>
+      </div>
+
+      <!-- نشاط أكمل المسار -->
+      <div class="fill-blank">
+        <h4>✍️ أكمل المسار العقلي:</h4>
+        <p>لأن الشريعة الإسلامية <input type="text" id="blank1" placeholder="مثال: خاتمة">، ولأن الأمة لم تصل للكمال، فيجب وجود <input type="text" id="blank2" placeholder="مثال: إمام معصوم"> لحمايتها من التحريف.</p>
+        <button class="btn-check" onclick="checkBlanks()">✅ تحقق</button>
+        <p class="feedback" id="blankFeedback"></p>
+      </div>
+    </section>
+
+    <!-- قسم الاختبار النهائي -->
+    <section id="quiz" class="unit">
+      <h2>✅ اختبار الدرس النهائي</h2>
+      <p class="unit-intro">أجب عن الأسئلة التالية لقياس استيعابك للدرس:</p>
+      
+      <form id="quizForm">
+        <!-- سؤال 1 -->
+        <div class="quiz-question">
+          <p><strong>1.</strong> ما الدليل العقلي على وجوب وجود الإمام بعد النبي (ص)؟</p>
+          <label><input type="radio" name="q1" value="wrong"> لأن الناس يحتاجون لقائد عسكري فقط</label>
+          <label><input type="radio" name="q1" value="correct"> لحفظ الشريعة من التحريف وبيان مجملها</label>
+          <label><input type="radio" name="q1" value="wrong"> لأن الإمامة منصب سياسي دنيوي</label>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="quiz-question">
+          <p><strong>2.</strong> أي مما يلي من أصول الدين التي لا يجوز فيها التقليد؟</p>
+          <label><input type="checkbox" name="q2" value="correct"> التوحيد</label>
+          <label><input type="checkbox" name="q2" value="correct"> الإمامة</label>
+          <label><input type="checkbox" name="q2" value="wrong"> الصلاة</label>
+          <label><input type="checkbox" name="q2" value="correct"> المعاد</label>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="quiz-question">
+          <p><strong>3.</strong> ما الفرق بين الوحي التشريعي وتنزّل الملائكة على الإمام؟</p>
+          <textarea name="q3" placeholder="اكتب إجابتك باختصار..." rows="3"></textarea>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="submitQuiz()">📤 إرسال الإجابات</button>
+      </form>
+
+      <!-- نتيجة الاختبار -->
+      <div class="quiz-result" id="quizResult" style="display:none;">
+        <h3>🎉 نتيجتك: <span id="score">0</span>/10</h3>
+        <p id="resultMessage"></p>
+        <button class="btn-retry" onclick="location.reload()">🔄 إعادة الدرس</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- تذييل الصفحة -->
+  <footer class="lesson-footer">
+    <p>📚 درس الإمامة | مرحلة ما بعد التكليف</p>
+    <p class="sources">المصادر: سفينة البحار، إثبات الوصية، بحار الأنوار، القرآن الكريم</p>
+    <p class="copyright">© 2026 - محتوى تعليمي غير ربحي</p>
+  </footer>
+
+  <!-- ملف الجافاسكريبت -->
+  <script src="js/main.js"></script>
+</body>
+</html>
