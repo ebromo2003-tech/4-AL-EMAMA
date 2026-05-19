@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة النور - في رحاب الإمام الجواد (عليه السلام)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #1e5631;
+            --dark-green: #0d3b1f;
+            --light-green: #2d8a4e;
+            --gold: #d4af37;
+            --light-gold: #f4e5c2;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --red: #8b0000;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+            min-height: 100vh;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* الأنماط العامة */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* الصفحة الرئيسية */
+        .landing-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 86, 49, 0.4) 0%, transparent 50%);
+        }
+
+        .ornament {
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            color: var(--gold);
+            z-index: 0;
+        }
+
+        .ornament-top { top: 50px; left: 50px; }
+        .ornament-bottom { bottom: 50px; right: 50px; }
+
+        .logo-section {
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+            border: 5px solid var(--light-gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo i {
+            font-size: 100px;
+            color: var(--dark-green);
+        }
+
+        .title {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, var(--light-gold), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: var(--light-gold);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .btn {
+            padding: 15px 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            color: var(--dark-green);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light-gold);
+            border: 3px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--dark-green);
+        }
+
+        /* شاشة اختيار المرحلة */
+        .level-selection {
+            display: none;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        .level-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .level-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .level-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .level-card.active {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .level-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .level-card h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--light-gold);
+        }
+
+        .level-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* شاشة اللعبة */
+        .game-screen {
+            display: none;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .game-header {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 2px solid var(--gold);
+        }
+
+        .game-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-box i {
+            color: var(--gold);
+            font-size: 1.5em;
+        }
+
+        .timer {
+            background: var(--red);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.3em;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* بطاقة السؤال */
+        .question-card {
+            background: rgba(255,255,255,0.95);
+            color: var(--black);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            border: 4px solid var(--gold);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--light-green);
+        }
+
+        .question-number {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .question-difficulty {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .difficulty-easy { background: #4ade80; color: #166534; }
+        .difficulty-medium { background: #facc15; color: #854d0e; }
+        .difficulty-hard { background: #f87171; color: #991b1b; }
+
+        .question-text {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--dark-green);
+        }
+
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .answer-option {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 3px solid #dee2e6;
+            border-radius: 15px;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .answer-option:hover {
+            background: linear-gradient(135deg, var(--light-gold) 0%, #e6d5a8 100%);
+            border-color: var(--gold);
+            transform: translateX(-5px);
+        }
+
+        .answer-option.correct {
+            background: #86efac;
+            border-color: #16a34a;
+            color: #14532d;
+        }
+
+        .answer-option.wrong {
+            background: #fca5a5;
+            border-color: #dc2626;
+            color: #7f1d1d;
+        }
+
+        .answer-letter {
+            background: var(--primary-green);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* أزرار التحكم */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* شاشة النتائج */
+        .results-screen {
+            display: none;
+            min-height: 100vh;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .results-card {
+            background: rgba(255,255,255,0.95);
+            color: var(--black);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 5px solid var(--gold);
+        }
+
+        .trophy {
+            font-size: 120px;
+            margin-bottom: 30px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .results-title {
+            font-size: 2.5em;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            color: var(--dark-green);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            font-size: 3em;
+            font-weight: 800;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 1em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* شريط التقدم */
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--light-gold));
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        /* تأثيرات خاصة */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .title { font-size: 2.2em; }
+            .subtitle { font-size: 1.3em; }
+            .question-text { font-size: 1.3em; }
+            .question-card { padding: 25px; }
+            .game-header { flex-direction: column; text-align: center; }
+            .level-cards { grid-template-columns: 1fr; }
+        }
+
+        /* جولة المسار */
+        .board-game {
+            display: none;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            color: var(--black);
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+            background: #e5e7eb;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .board-cell {
+            aspect-ratio: 1;
+            background: var(--white);
+            border: 3px solid var(--primary-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .board-cell:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .board-cell.start { background: #86efac; border-color: #16a34a; }
+        .board-cell.finish { background: #fca5a5; border-color: #dc2626; }
+        .board-cell.bonus { background: #fde047; border-color: #ca8a04; }
+
+        .player-piece {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 3px solid var(--dark-green);
+            z-index: 10;
+            transition: all 0.5s ease;
+        }
+
+        /* زر النرد */
+        .dice-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .dice {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 4px solid var(--gold);
+            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--primary-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .dice:hover {
+            transform: rotate(360deg);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="landing-page" id="landingPage">
+        <div class="ornament ornament-top">۞</div>
+        <div class="ornament ornament-bottom">۞</div>
+        
+        <div class="logo-section">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+            </div>
+            <h1 class="title">رحلة النور</h1>
+            <p class="subtitle">في رحاب الإمام الجواد (عليه السلام)</p>
+            <p class="description">
+                مسابقة تفاعلية في ذكرى استشهاد التاسع من آل الرسول<br>
+                الإمام محمد بن علي الجواد (عليه السلام)<br>
+                رحلة علمية وروحية عبر مراحل حياته الشريفة
+            </p>
+            <button class="btn btn-primary" onclick="showLevelSelection()">
+                <i class="fas fa-play"></i> ابدأ الرحلة
+            </button>
+            <button class="btn btn-secondary" onclick="showInfo()">
+                <i class="fas fa-info-circle"></i> عن المسابقة
+            </button>
+        </div>
+    </div>
+
+    <!-- اختيار المرحلة -->
+    <div class="level-selection container" id="levelSelection">
+        <h2 class="title" style="text-align: center; margin-bottom: 20px;">اختر مستوى المسابقة</h2>
+        <p style="text-align: center; font-size: 1.2em; color: var(--light-gold);">
+            اختر المستوى المناسب لعمرك الدراسي
+        </p>
+        
+        <div class="level-cards">
+            <div class="level-card" onclick="selectLevel('elementary')">
+                <div class="level-icon">🌟</div>
+                <h3>المرحلة الابتدائية</h3>
+                <p>
+                    10 أسئلة سهلة ومباشرة<br>
+                    معلومات أساسية عن الإمام الجواد (ع)<br>
+                    مناسب للصفوف 4-6 ابتدائي
+                </p>
+            </div>
+            
+            <div class="level-card" onclick="selectLevel('intermediate')">
+                <div class="level-icon">⭐</div>
+                <h3>المرحلة الإعدادية</h3>
+                <p>
+                    10 أسئلة متوسطة وتحليلية<br>
+                    سيرة ومعجزات وسياق تاريخي<br>
+                    مناسب للصفوف 1-2 متوسط
+                </p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-secondary" onclick="backToLanding()">
+                <i class="fas fa-arrow-right"></i> رجوع
+            </button>
+        </div>
+    </div>
+
+    <!-- شاشة اللعبة -->
+    <div class="game-screen container" id="gameScreen">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+        </div>
+        
+        <div class="game-header">
+            <div class="game-info">
+                <div class="info-box">
+                    <i class="fas fa-layer-group"></i>
+                    <span id="levelDisplay">المرحلة: -</span>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-question-circle"></i>
+                    <span>السؤال: <span id="questionNumber">1</span>/10</span>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-star"></i>
+                    <span>النقاط: <span id="score">0</span></span>
+                </div>
+            </div>
+            <div class="timer" id="timer">
+                <i class="fas fa-clock"></i> <span id="timeLeft">30</span> ثانية
+            </div>
+        </div>
+
+        <div class="question-card fade-in" id="questionCard">
+            <div class="question-header">
+                <span class="question-number" id="qNumber">السؤال 1</span>
+                <span class="question-difficulty difficulty-easy" id="qDifficulty">سهل</span>
+            </div>
+            
+            <div class="question-text" id="questionText">
+                جاري تحميل السؤال...
+            </div>
+            
+            <div class="answers-grid" id="answersGrid">
+                <!-- سيتم ملؤها بالجافاسكريبت -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-secondary" onclick="backToLevelSelection()">
+                <i class="fas fa-times"></i> خروج
+            </button>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="display: none;">
+                السؤال التالي <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- شاشة النتائج -->
+    <div class="results-screen container" id="resultsScreen">
+        <div class="results-card">
+            <div class="trophy">🏆</div>
+            <h2 class="results-title">أحسنت! أكملت الرحلة</h2>
+            <p style="font-size: 1.3em; color: #666; margin-bottom: 20px;">
+                جزاك الله خيراً على مشاركتك في هذه المسابقة
+            </p>
+            
+            <div class="score-display" id="finalScore">
+                0 / 100
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="correctAnswers">0</div>
+                    <div class="stat-label">إجابات صحيحة</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="wrongAnswers">0</div>
+                    <div class="stat-label">إجابات خاطئة</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="accuracy">0%</div>
+                    <div class="stat-label">نسبة الدقة</div>
+                </div>
+            </div>
+            
+            <div style="margin: 30px 0; padding: 20px; background: var(--light-gold); border-radius: 15px; color: var(--dark-green);">
+                <i class="fas fa-pray" style="font-size: 2em; margin-bottom: 10px; display: block;"></i>
+                <p style="font-size: 1.1em; font-weight: 600;">
+                    اللهم صلِّ على محمد وآل محمد<br>
+                    وعجِّل فرجهم والعن قتلة الإمام الجواد عليه السلام
+                </p>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-primary" onclick="restartGame()">
+                    <i class="fas fa-redo"></i> إعادة اللعبة
+                </button>
+                <button class="btn btn-secondary" onclick="backToLanding()">
+                    <i class="fas fa-home"></i> الصفحة الرئيسية
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // قاعدة البيانات - الأسئلة
+        const questionsData = {
+            elementary: [
+                {
+                    question: "ما هو ترتيب الإمام الجواد (عليه السلام) في سلسلة أئمة أهل البيت؟",
+                    answers: ["الإمام السابع", "الإمام التاسع", "الإمام الثامن", "الإمام العاشر"],
+                    correct: 1,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "أين ولد الإمام الجواد عليه السلام؟",
+                    answers: ["كربلاء المقدسة", "بغداد", "المدينة المنورة", "خراسان"],
+                    correct: 2,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "من هي والدة الإمام الجواد عليه السلام التي وصفها الإمام العسكري بأنها خُلقت طاهرة مطهرة؟",
+                    answers: ["السيدة سبيكة (خيزران)", "السيدة حميدة", "السيدة نجمة", "السيدة نرجس"],
+                    correct: 0,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "لُقب الإمام بـ (الجواد)، فما السبب في إطلاق هذا اللقب عليه؟",
+                    answers: ["لكثرة صلاته وعبادته", "لكثرة ما أسداه من الخير والبر والإحسان إلى الناس", "لأنه كان يركب الجياد دائماً", "لصغر سنه الشريف"],
+                    correct: 1,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "أي من هذه العبارات كانت منقوشة على خاتم الإمام الجواد عليه السلام؟",
+                    answers: ["الملك لله", "العزة لله", "الحمد لله", "حسبي الله"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "كم كان عمر الإمام الجواد (عليه السلام) تقريباً عندما استشهد؟",
+                    answers: ["50 سنة", "25 إلى 28 سنة", "17 سنة", "40 سنة"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "في أي مدينة يقع مزار الإمام الجواد عليه السلام الحالي؟",
+                    answers: ["النجف الأشرف", "بغداد (الكاظمية)", "سامراء", "مشهد"],
+                    correct: 1,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "اشتهر الإمام الجواد بلقب (باب المراد)، ما معنى هذا اللقب؟",
+                    answers: ["الباب الذي يخرج منه إلى المعارك", "الباب الذي تقضى عنده حوائج الناس", "لأنه كان يعيش في بيت له أبواب كثيرة", "لأنه كان يفتح باب بيته للعلماء فقط"],
+                    correct: 1,
+                    difficulty: "easy",
+                    points: 10
+                },
+                {
+                    question: "أي من خلفاء بني العباس قام بالتحريض على قتل الإمام الجواد عليه السلام؟",
+                    answers: ["المأمون", "المعتصم", "هارون الرشيد", "المتوكل"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "في أي شهر عربي من السنة الهجرية استشهد الإمام الجواد عليه السلام؟",
+                    answers: ["شهر رمضان", "شهر ذو القعدة", "شهر محرم", "شهر رجب"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                }
+            ],
+            intermediate: [
+                {
+                    question: "لماذا تسبب تأخر إنجاب الإمام الرضا (ع) في شك بعض الناس؟",
+                    answers: ["لأن الناس اعتقدوا أن الإمام يجب أن يكون لديه ولد يرث إمامته", "لأنهم ظنوا أن الإمام الرضا سيتنازل عن الخلافة", "لأن الإمام الرضا لم يقم بأي معجزة", "لأنهم كانوا يريدون إماماً من خارج نسل الإمام الكاظم"],
+                    correct: 0,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "ماذا قال الإمام الرضا عليه السلام عن ابنه الإمام الجواد عند ولادته؟",
+                    answers: ["قال إنه سيكون أعلم أهل الأرض فقط", "قال: هذا المولود الذي لم يولد مولود أعظم بركة على شيعتنا منه", "قال إنه سيحكم المسلمين كخليفة رسمي", "قال إنه سيعيش عمراً طويلاً يمتد لمئة عام"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "كم كان عمر الإمام الجواد (عليه السلام) عندما تسلم مهام الإمامة؟",
+                    answers: ["كان في السابعة إلى التاسعة من عمره الشريف", "كان في العشرين من عمره", "كان في سن الخامسة عشرة", "تولاها وهو في المهد"],
+                    correct: 0,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "كيف واجه العلماء مسألة صغر سن الإمام الجواد (ع)؟",
+                    answers: ["رفضوا إمامته تماماً", "عقدوا له امتحانات واختبارات مكثفة", "انتظروا حتى يبلغ سن الأربعين", "طلبوا من الخليفة تعيين معلم خاص له"],
+                    correct: 1,
+                    difficulty: "hard",
+                    points: 20
+                },
+                {
+                    question: "أي نبي من الأنبياء ذُكر في القرآن لمقارنة تولي الإمام الجواد للإمامة في صغره؟",
+                    answers: ["النبي موسى عليه السلام", "عيسى بن مريم عليه السلام", "النبي إبراهيم عليه السلام", "النبي محمد صلى الله عليه وآله"],
+                    correct: 1,
+                    difficulty: "hard",
+                    points: 20
+                },
+                {
+                    question: "ما إحدى معجزات الإمام الجواد (ع) في معرفة ما ينطوي عليه باطن الناس؟",
+                    answers: ["كان يعرف الكلام الذي يفكر فيه الشخص قبل أن يتكلم", "كان يطير في الهواء", "كان يختفي عن الأنظار", "كان يتحدث بلغات الطيور"],
+                    correct: 0,
+                    difficulty: "hard",
+                    points: 20
+                },
+                {
+                    question: "ما دلالة لقب (التقي) في سيرة الإمام الجواد (ع)؟",
+                    answers: ["أنه اعتصم بالله ولم يستجب لأي داع من دواعي الهوى", "أنه كان يلتقي بالناس دائماً", "لأنه ولد في يوم التقوى العالمي", "لأنه كان يرتدي ملابس خاصة"],
+                    correct: 0,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "كم سنة استمرت مدة إمامة الإمام الجواد (عليه السلام)؟",
+                    answers: ["25 سنة", "17 سنة", "7 سنوات", "11 سنة"],
+                    correct: 1,
+                    difficulty: "medium",
+                    points: 15
+                },
+                {
+                    question: "من هي الشخصية التي باشرت بوضع السم للإمام الجواد (ع)؟",
+                    answers: ["أحد وزراء المعتصم", "زوجته (أم الفضل) بنت المأمون", "أحد حراس السجن", "جعفر بن المأمون"],
+                    correct: 1,
+                    difficulty: "hard",
+                    points: 20
+                },
+                {
+                    question: "في أي سنة هجرية وقعت فاجعة استشهاد الإمام الجواد عليه السلام؟",
+                    answers: ["عام 195 هـ", "عام 220 هـ", "عام 250 هـ", "عام 183 هـ"],
+                    correct: 1,
+                    difficulty: "hard",
+                    points: 20
+                }
+            ]
+        };
+
+        // المتغيرات العامة
+        let currentLevel = '';
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let timer;
+        let timeLeft = 30;
+        let answered = false;
+
+        // التنقل بين الصفحات
+        function showLevelSelection() {
+            document.getElementById('landingPage').style.display = 'none';
+            document.getElementById('levelSelection').style.display = 'block';
+            document.getElementById('gameScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+        }
+
+        function backToLanding() {
+            document.getElementById('landingPage').style.display = 'flex';
+            document.getElementById('levelSelection').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+        }
+
+        function backToLevelSelection() {
+            if(confirm('هل تريد الخروج من المسابقة؟')) {
+                clearInterval(timer);
+                showLevelSelection();
+            }
+        }
+
+        function selectLevel(level) {
+            currentLevel = level;
+            currentQuestions = [...questionsData[level]];
+            currentQuestionIndex = 0;
+            score = 0;
+            correctCount = 0;
+            wrongCount = 0;
+            
+            // خلط الأسئلة
+            currentQuestions.sort(() => Math.random() - 0.5);
+            
+            document.getElementById('levelSelection').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'block';
+            
+            document.getElementById('levelDisplay').textContent = 
+                level === 'elementary' ? 'المرحلة الابتدائية' : 'المرحلة الإعدادية';
+            
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            answered = false;
+            timeLeft = 30;
+            const q = currentQuestions[currentQuestionIndex];
+            
+            document.getElementById('questionNumber').textContent = currentQuestionIndex + 1;
+            document.getElementById('qNumber').textContent = `السؤال ${currentQuestionIndex + 1}`;
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('score').textContent = score;
+            
+            // تحديث الصعوبة
+            const diffElement = document.getElementById('qDifficulty');
+            diffElement.className = 'question-difficulty';
+            if(q.difficulty === 'easy') {
+                diffElement.classList.add('difficulty-easy');
+                diffElement.textContent = 'سهل';
+            } else if(q.difficulty === 'medium') {
+                diffElement.classList.add('difficulty-medium');
+                diffElement.textContent = 'متوسط';
+            } else {
+                diffElement.classList.add('difficulty-hard');
+                diffElement.textContent = 'صعب';
+            }
+            
+            // عرض الإجابات
+            const answersGrid = document.getElementById('answersGrid');
+            answersGrid.innerHTML = '';
+            
+            const letters = ['أ', 'ب', 'ج', 'د'];
+            q.answers.forEach((answer, index) => {
+                const option = document.createElement('div');
+                option.className = 'answer-option';
+                option.onclick = () => checkAnswer(index);
+                option.innerHTML = `
+                    <span class="answer-letter">${letters[index]}</span>
+                    <span>${answer}</span>
+                `;
+                answersGrid.appendChild(option);
+            });
+            
+            // تحديث شريط التقدم
+            const progress = ((currentQuestionIndex) / currentQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // إخفاء زر التالي
+            document.getElementById('nextBtn').style.display = 'none';
+            
+            // بدء المؤقت
+            startTimer();
+        }
+
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timeLeft').textContent = timeLeft;
+                
+                if(timeLeft <= 0) {
+                    clearInterval(timer);
+                    if(!answered) {
+                        showCorrectAnswer();
+                    }
+                }
+            }, 1000);
+        }
+
+        function checkAnswer(selectedIndex) {
+            if(answered) return;
+            answered = true;
+            clearInterval(timer);
+            
+            const q = currentQuestions[currentQuestionIndex];
+            const options = document.querySelectorAll('.answer-option');
+            
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if(index === q.correct) {
+                    option.classList.add('correct');
+                } else if(index === selectedIndex && index !== q.correct) {
+                    option.classList.add('wrong');
+                }
+            });
+            
+            if(selectedIndex === q.correct) {
+                score += q.points;
+                correctCount++;
+            } else {
+                wrongCount++;
+            }
+            
+            document.getElementById('score').textContent = score;
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        }
+
+        function showCorrectAnswer() {
+            const q = currentQuestions[currentQuestionIndex];
+            const options = document.querySelectorAll('.answer-option');
+            
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if(index === q.correct) {
+                    option.classList.add('correct');
+                }
+            });
+            
+            wrongCount++;
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if(currentQuestionIndex < currentQuestions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('gameScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'block';
+            
+            const totalPoints = currentQuestions.reduce((sum, q) => sum + q.points, 0);
+            const percentage = Math.round((score / totalPoints) * 100);
+            
+            document.getElementById('finalScore').textContent = `${score} / ${totalPoints}`;
+            document.getElementById('correctAnswers').textContent = correctCount;
+            document.getElementById('wrongAnswers').textContent = wrongCount;
+            document.getElementById('accuracy').textContent = `${percentage}%`;
+        }
+
+        function restartGame() {
+            selectLevel(currentLevel);
+        }
+
+        function showInfo() {
+            alert('مسابقة رحلة النور\n\nمسابقة تفاعلية في ذكرى شهادة الإمام الجواد (عليه السلام)\n\nتتكون من:\n- 10 أسئلة للمرحلة الابتدائية\n- 10 أسئلة للمرحلة الإعدادية\n\nكل إجابة صحيحة تمنح نقاط حسب مستوى الصعوبة');
+        }
+
+        // منع النقر بزر الماوس الأيمن (اختياري)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>
